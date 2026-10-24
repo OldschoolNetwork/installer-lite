@@ -9,7 +9,7 @@
       "version": "0.1",
       "min_sdk": 8,
       "abi": "universal",
-      "sha256": "a70b8b1d9dde13dde9f46e978c46bcbc164777a1dddba8edd62131a6468023fb",
+      "sha256": "526de8c37e216983eaaf29a25383c0210e9d71e81d168ae1091a2e28f4c4564a",
       "asset": "ON-Core-Services-Lite-0.1.apk",
       "dependencies": [],
       "signing": "release",
@@ -23,7 +23,7 @@
       "version": "0.1",
       "min_sdk": 8,
       "abi": "universal",
-      "sha256": "d3399549db33098956268aa79ed8c272f8b7800d48aacd5bf401fd8139ce3737",
+      "sha256": "6cbfb3b9720b4b139b03123727cd97b56d647ccc0ca58fd72ff0d141f132fab1",
       "asset": "ON-Store-Lite-0.1.apk",
       "dependencies": [
         "core"
