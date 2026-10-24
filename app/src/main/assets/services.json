@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "releases": [
+    {
+      "id": "core",
+      "name": "ON Core Services Lite",
+      "package_name": "com.oldschoolnetwork.core.lite",
+      "version_code": 1,
+      "version": "0.1",
+      "min_sdk": 8,
+      "abi": "universal",
+      "sha256": "a70b8b1d9dde13dde9f46e978c46bcbc164777a1dddba8edd62131a6468023fb",
+      "asset": "ON-Core-Services-Lite-0.1.apk",
+      "dependencies": [],
+      "signing": "release",
+      "certificate_sha256": "f8239cd9deb269e9d4d86893732c27def1936737539c31983d75f1251a49f2d2"
+    },
+    {
+      "id": "store",
+      "name": "ON Store Lite",
+      "package_name": "com.oldschoolnetwork.store.lite",
+      "version_code": 1,
+      "version": "0.1",
+      "min_sdk": 8,
+      "abi": "universal",
+      "sha256": "d3399549db33098956268aa79ed8c272f8b7800d48aacd5bf401fd8139ce3737",
+      "asset": "ON-Store-Lite-0.1.apk",
+      "dependencies": [
+        "core"
+      ],
+      "signing": "release",
+      "certificate_sha256": "f8239cd9deb269e9d4d86893732c27def1936737539c31983d75f1251a49f2d2"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+apply plugin: 'com.android.application'
+android { compileSdkVersion 28
+ aaptOptions { noCompress "apk" }
+ defaultConfig { applicationId 'com.oldschoolnetwork.services.liteinstaller'; minSdkVersion 8; targetSdkVersion 10; versionCode 1; versionName 'alpha-0.1' }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_1_7; targetCompatibility JavaVersion.VERSION_1_7 }
+ buildTypes { release { minifyEnabled true; proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' } }
+}
+dependencies { implementation project(':shared') }
+
+task verifyReleasePayload {
+    doLast {
+        def manifest = file('src/main/assets/services.json')
+        if (!manifest.exists()) throw new GradleException('Prepare signed Core and Store APKs with tools/prepare-bundle.py before a release build.')
+        def releases = new groovy.json.JsonSlurper().parse(manifest).releases
+        if (!releases || !releases.any { it.id == 'core' } || !releases.any { it.id == 'store' }) throw new GradleException('The release payload must include Core and Store.')
+        releases.each { release ->
+            def apk = file('src/main/assets/apks/' + release.asset)
+            if (release.signing != 'release' || !apk.exists()) throw new GradleException('Missing signed release APK: ' + release.id)
+            def digest = java.security.MessageDigest.getInstance('SHA-256').digest(apk.bytes).encodeHex().toString()
+            if (digest != release.sha256) throw new GradleException('The bundled APK changed. Regenerate the payload manifest: ' + release.id)
+        }
+    }
+}
+afterEvaluate { preReleaseBuild.dependsOn verifyReleasePayload }
