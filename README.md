@@ -2,7 +2,7 @@
 
 Installs the signed Core Lite and Store Lite packages. Choose ordinary Android installation or full installation on supported rooted classic systems. Optional Mozilla root certificate installation includes backup and recovery.
 
-First alpha: **0.1**, version code **1**. Android **2.2 / API 8** or later. Intended for legacy devices; use the regular ON editions on current Android.
+Current alpha: **0.2**, version code **2**. Android **2.2 / API 8** or later. Intended for legacy devices; use the regular ON editions on current Android.
 
 ## Design and compatibility
 
