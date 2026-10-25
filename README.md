@@ -1,8 +1,24 @@
+<p align="center">
+  <img src="docs/branding/app-icon.png" width="96" alt="Application icon">
+</p>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/branding/oldschool-network-dark.svg">
+    <img src="docs/branding/oldschool-network-light.svg" width="200" alt="Oldschool Network">
+  </picture>
+</p>
+
 # ON Installer Lite
 
 Installs the signed Core Lite and Store Lite packages. Choose ordinary Android installation or full installation on supported rooted classic systems. Optional Mozilla root certificate installation includes backup and recovery.
 
 Current alpha: **0.2**, version code **2**. Android **2.2 / API 8** or later. Intended for legacy devices; use the regular ON editions on current Android.
+
+## Screenshots
+
+<p>
+  <img src="docs/screenshots/services.png" width="240" alt="Lite service selection">
+</p>
 
 ## Design and compatibility
 
@@ -26,6 +42,9 @@ The shared module is embedded in `shared/` in this repository. In the multi-proj
 Lite releases are scheduled independently. Regular Core, Store and Installer updates do not rebuild or publish Lite packages automatically.
 
 ## Current limits
+
+In 0.2, installation controls can be disabled by a missing version label in the bundled service metadata. A correction is pending.
+
 
 Early alpha. No complete offline catalogue or full background automatic-update parity with regular ON apps. Store Lite requires server build-0011. Testing includes Android 2.2 ARM with 128 MB memory; physical devices and ROM-specific behaviour need further verification.
 
